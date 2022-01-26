@@ -2,17 +2,25 @@
 Implementing a doubly linked list and queue for simplified network router.
 
 ASSIGNMENT PROMPT:
-Overview
-The Internet: The Giant Computer Network
-It has been stated that a single weekday edition of the New York Times contains more information than a seventeenth-century individual might come across in their entire lifetime.  Whether or not this is true, there is no denying that we live in an age of information availability.  Thanks to the internet, we create and consume exabytes of information daily.
-As vast as the internet is today, at its core, this digital age is made possible by computer networking.  We may not think about it every time we make a Google search or buy something on Amazon, but what we are doing is sending and receiving digital data through a giant network.  For anyone interested, computerhistory.org has a nice timeline visualizing key developments in networking.
-This Assignment
-In this assignment, you will be implementing the data structures for a highly simplified first-come-first-serve network routing program: a queue.  Most networks are based on queues, in which the traffic is processed in the order it is received.  Our simplified router will only have two routes: internal and external traffic.
-Think of it this way: users at their local computer send network requests (called “packets”) to another computer.  The network consists of many nodes between your computer and the other computers.  When a network request arrives at a node, it must determine where to send it next so that it reaches the destination computer.  If the user was loading Google, it will forward the request to another node closer to Google’s servers.  If the user was loading a local resource, such as a TAMU webpage while inside the TAMU network, it will send the request to a different node, perhaps directly to the webpage server.
-You will be given the majority of code for the simplified router and network packet.  The code you must implement can be thought of as two distinct activities:
+
+
+Overview:
+- The Internet: The Giant Computer Network
+  It has been stated that a single weekday edition of the New York Times contains more information than a seventeenth-century individual might come across in their entire lifetime.  Whether or not this is true, there is no denying that we live in an age of information availability.  Thanks to the internet, we create and consume exabytes of information daily.
+  As vast as the internet is today, at its core, this digital age is made possible by computer networking.  We may not think about it every time we make a Google search or buy something on Amazon, but what we are doing is sending and receiving digital data through a giant network.  For anyone interested, computerhistory.org has a nice timeline visualizing key developments in networking.
+
+
+- This Assignment:
+  In this assignment, you will be implementing the data structures for a highly simplified first-come-first-serve network routing program: a queue.  Most networks are based on queues, in which the traffic is processed in the order it is received.  Our simplified router will only have two routes: internal and external traffic.
+  Think of it this way: users at their local computer send network requests (called “packets”) to another computer.  The network consists of many nodes between your computer and the other computers.  When a network request arrives at a node, it must determine where to send it next so that it reaches the destination computer.  If the user was loading Google, it will forward the request to another node closer to Google’s servers.  If the user was loading a local resource, such as a TAMU webpage while inside the TAMU network, it will send the request to a different node, perhaps directly to the webpage server.
+  
+  You will be given the majority of code for the simplified router and network packet.  
+- The code you must implement can be thought of as two distinct activities:
 Part a: Implement a Queue, utilizing a Doubly-Linked List data structure
 Part b: Update your data structures to support templated types
-Getting Started
+
+Getting Started:
+
 Mimir has the two parts of the assignment split into parts a and b.
 Visit Assignment 01a on Mimir to download the starter code.
 Familiarize yourself with the code
