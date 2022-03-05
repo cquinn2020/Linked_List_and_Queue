@@ -3,7 +3,6 @@
 #include "NetworkPacket.h"
 #include <iostream>
 using std::string;
-// TODO: Define the Node class
 // Note: Since the functions are all small, you can put everything in this file
 class Node {
     public:
@@ -26,8 +25,8 @@ class Node {
         
         // Getters and Setters:
         // - getdata() returns the data from Network packet.
-        std::string getData() {
-            return packet.data;
+        NetworkPacket getData() {
+            return packet;
         }
         // - getNext() returns next Node in linked list.
         Node* getNext() {
