@@ -5,12 +5,13 @@
 #include <iostream>
 #include "Node.h"
 
-// Doubly Linked List implementation
+// Doubly Linked List implementation (templated)
+template <typename T>
 class DoublyLinkedList {
     
     private:
-        Node* front; // Pointer to the front element in list.
-        Node* back; // Pointer to the back element in the list.
+        Node<T>* front; // Pointer to the front element in list.
+        Node<T>* back; // Pointer to the back element in the list.
         int length; // Keeps track of the number of elements in the list.
     
     public:
@@ -18,17 +19,17 @@ class DoublyLinkedList {
         DoublyLinkedList(): front(nullptr), back(nullptr), length(0) {};
         
         // Rule of 3:
-        //~DoublyLinkedList(); // Destructor
-        //DoublyLinkedList(const DoublyLinkedList& other); // Copy constructor
-        //DoublyLinkedList& operator=(const DoublyLinkedList& other); // Copy assignment const.
+        ~DoublyLinkedList(); // Destructor
+        DoublyLinkedList(const DoublyLinkedList& other); // Copy constructor
+        DoublyLinkedList& operator=(const DoublyLinkedList& other); // Copy assignment constructor
         
         // Getters:
         // - getFront() returns the head of the list.
-        Node* getFront() {
+        Node<T>* getFront() {
             return front;
         }
         // - getBack() returns the tail of the list.
-        Node* getBack() {
+        Node<T>* getBack() {
             return back;
         }
         // - getLength() returns the number of elements in the list.
@@ -36,7 +37,18 @@ class DoublyLinkedList {
             return length;
         }
 
+        // - insert() is used to add a new node at the specified
+        // index in the LL
+        void insert(T packet, int index);
+        // - remove() deletes a node at the specified index
+        T remove(int index);
 
+        // - toString() converts the list into a string
+        string toString();
+
+        // - clear() is a helper function for the destructor and copy assignment
+        // to delete a linked list.
+        void clear();
 };
 
 #endif
