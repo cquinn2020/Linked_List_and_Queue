@@ -1,56 +1,56 @@
 #ifndef NODE_H
 #define NODE_H
-#include "NetworkPacket.h"
+
 #include <iostream>
+
 using std::string;
-// Note: Since the functions are all small, you can put everything in this file
+
+// Templating the node to enable linked list to hold any type of data 
+template <typename T>
 class Node {
     public:
-        NetworkPacket packet; // Network packet containing the data.
-        Node* next; // Points to next node in list.
-        Node* prev; // Points to previous node in the list.
+        T packet; // Packet containing the data.
+        Node<T>* next; // Points to next node in list.
+        Node<T>* prev; // Points to previous node in the list.
 
         // Default constructor.
         Node() {
             next = nullptr;
             prev = nullptr;
-            NetworkPacket packet;
+            T packet;
         }
         // Parameterized constuctor -> creates Node with data from provided packet.
-        Node(const NetworkPacket& pack) {
+        Node(const T& pack) {
             next = nullptr;
             prev = nullptr;
             this->packet = pack;
         }
         
         // Getters and Setters:
-        // - getdata() returns the data from Network packet.
-        NetworkPacket getData() {
+        // - getdata() returns the data from packet.
+        T getData() {
             return packet;
         }
         // - getNext() returns next Node in linked list.
-        Node* getNext() {
+        Node<T>* getNext() {
             return next;
         }
         // - getPrev() returns previous Node in linked list.
-        Node* getPrev() {
+        Node<T>* getPrev() {
             return prev;
         }
-        // - setData() updates nodes network packet.
-        void setData(const NetworkPacket& d) {
+        // - setData() updates nodes packet.
+        void setData(const T& d) {
             this->packet = d;
         }
         // - setNext() updates nodes next pointer.
-        void setNext(Node* n) {
+        void setNext(Node<T>* n) {
             this->next = n;
         }
         // - setPrev() updates nodes previous pointer.
-        void setPrev(Node* p) {
+        void setPrev(Node<T>* p) {
             this->prev = p;
         }
-
-
 };
-
 
 #endif
